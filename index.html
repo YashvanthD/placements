@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.each demo</title>
+    <style>
+        .content,
+        a {
+            text-decoration: unset;
+            padding: 10px;
+            text-decoration-style: unset;
+        }
+        
+        .content {
+            margin: 20px;
+            width: 300px;
+            height: 200px;
+            float: left;
+            font-size: 30px;
+        }
+        
+        .content:hover {
+            /* transform: scale(1.1);*/
+        }
+        
+        a {
+            color: white;
+            padding: 50px;
+        }
+        
+        a:hover {
+            box-shadow: 0 3px 80px 1px rgb(255, 248, 248);
+        }
+        
+        .header {
+            font-family: cursive;
+            font-size: 50px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        
+        body {
+            color: white;
+            background-color: rgb(32, 31, 31);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+
+    <center>
+        <div>
+            <h1 class="header">MY JOB PORTAL</h1>
+        </div>
+
+    </center>
+    <div class="list"></div>
+    <script>
+        var obj = {
+            Amazon: 'https://account.amazon.jobs/en-US',
+            Microsoft: '',
+            capgemini: 'https://career10.successfactors.com/career?career_company=C0002723615P&lang=en_GB&company=C0002723615P&site=&loginFlowRequired=true&career_job_req_id=80618&_s.crb=T%2fNbZc%2bNn6LfVL6iMnOfrAfx8%2fIdB8%2frU3vtA8spr%2b8%3d',
+            TCS: 'https://nextstep.tcs.com/campus/',
+            Glassdoor: '',
+            linkedin: 'https://www.linkedin.com/jobs/',
+            superset: 'https://app.joinsuperset.com/#/s/profile',
+
+
+
+        };
+        jQuery.each(obj, function(key, val) {
+            $(".list").append("<div class= 'content' id = " + key + " > </div>")
+        });
+
+        jQuery.each(obj, function(key, val) {
+            $("#" + key).html("<a href='" + val + "' > " + key + " </a>");
+        });
+    </script>
+
+</body>
+
+</html>
